@@ -1,7 +1,7 @@
 import java.io.*;
 
 class ReadWriteString {
-    public String ReadFile(String fileName) {
+    public static String ReadFile(String fileName) {
         StringBuilder content = new StringBuilder();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
@@ -22,6 +22,10 @@ class ReadWriteString {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static int countCharacters(String inputFile) {
+        return ReadFile(inputFile).length();
     }
 
     public static void main(String[] args) {
